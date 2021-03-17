@@ -143,7 +143,11 @@ const Config = () => {
               <option value="New">NEW</option>
               {groups.length > 0
                 ? groups.map((group) => (
-                    <option value={group.join(' ')} onClick={() => {}}>
+                    <option
+                      value={group.join(' ')}
+                      key={group.join()}
+                      onClick={() => {}}
+                    >
                       {group.join(' ')}
                     </option>
                   ))
