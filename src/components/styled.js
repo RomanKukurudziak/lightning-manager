@@ -37,6 +37,7 @@ export const Wrapper = styled.div`
   display: flex;
 
   height: 100vh;
+  bottom: 0;
 `;
 
 export const Main = styled.div`
@@ -58,6 +59,7 @@ export const DeviceContainer = styled.div`
   justify-content: center;
   width: 400px;
   border-radius: 10px;
+  bottom: 0;
 `;
 
 export const KeyboardStyle = styled.div`
