@@ -17,6 +17,7 @@ function Sidebar({
 }) {
   const [showPicker, setShowPicker] = useState(true);
   const selectRef = useRef();
+  const [showError, setShowError] = useState(false);
 
   useEffect(() => {
     setPresets((prevState) => {
@@ -54,7 +55,10 @@ function Sidebar({
       (groups.flat(1).filter((key) => newGroup.includes(key)).length !== 0 &&
         groups.length > 0)
     )
-      return console.log("Can't add key that is  already in a group!");
+      return (() => {
+        setShowError(true);
+        setTimeout(() => setShowError(false), 2500);
+      })();
     setGroups((prevState) => prevState.concat([newGroup]));
 
     setNewGroup([]);
@@ -69,7 +73,6 @@ function Sidebar({
       const newState = JSON.parse(JSON.stringify(prevState));
       newState.push(defaultPreset);
       newState[newState.length - 1].name = `Preset ${newState.length}`;
-      console.log(newState);
       return newState;
     });
   };
@@ -143,6 +146,11 @@ function Sidebar({
         </ColorWrapper>
         <ColorWrapper>
           <button onClick={handleClearAll}>CLEAR ALL</button>
+        </ColorWrapper>
+        <ColorWrapper>
+          <h4 style={{ display: showError ? 'inline' : 'none' }}>
+            Can't add key that is already in a group!
+          </h4>
         </ColorWrapper>
       </div>
     </SidebarContainer>
