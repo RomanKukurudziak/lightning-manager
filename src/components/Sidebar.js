@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { HuePicker } from 'react-color';
 import { Brush, Color, ColorWrapper, SidebarContainer } from './styled';
-import { saveStoragePreset } from './default';
+import { defaultPreset, saveStoragePreset } from './default';
 
 function Sidebar({
   presets,
@@ -64,6 +64,16 @@ function Sidebar({
     setCurrentPreset(presets[+e.target.value]);
   };
 
+  const handleAddPreset = (e) => {
+    setPresets((prevState) => {
+      const newState = JSON.parse(JSON.stringify(prevState));
+      newState.push(defaultPreset);
+      newState[newState.length - 1].name = `Preset ${newState.length}`;
+      console.log(newState);
+      return newState;
+    });
+  };
+
   return (
     <SidebarContainer>
       <h2>LIGHTSYNC</h2>
@@ -77,6 +87,7 @@ function Sidebar({
           </option>
         ))}
       </select>
+      <button onClick={handleAddPreset}>Add preset</button>
       <div>
         <Brush
           onClick={() => {

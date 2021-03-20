@@ -8,11 +8,15 @@ import Device from './components/Device';
 
 function App() {
   const [presets, setPresets] = useState(
-    loadStoragePreset()[0] || [defaultPreset, defaultPreset2]
+    loadStoragePreset()
+      ? loadStoragePreset()[0]
+      : [defaultPreset, defaultPreset2]
   );
 
   const [currentPreset, setCurrentPreset] = useState(presets[0]);
-  const [groups, setGroups] = useState(loadStoragePreset()[1] || []);
+  const [groups, setGroups] = useState(
+    loadStoragePreset() ? loadStoragePreset()[1] : []
+  );
   const [newGroup, setNewGroup] = useState([]);
   const [curColor, setCurColor] = useState('#ffffff');
 
