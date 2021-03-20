@@ -48,30 +48,6 @@ export const defaultPreset2 = {
   SPACE: '#0600ff',
 };
 
-export const defaultPreset3 = {
-  GB: '#0600ff',
-  FN1: '#0600ff',
-  FN2: '#0600ff',
-  FN3: '#0600ff',
-  FN4: '#0600ff',
-  TAB: '#0600ff',
-  Q: '#0600ff',
-  W: '#0600ff',
-  E: '#0600ff',
-  R: '#0600ff',
-  CAPS: '#0600ff',
-  A: '#0600ff',
-  S: '#0600ff',
-  D: '#0600ff',
-  F: '#0600ff',
-  SHIFT: '#0600ff',
-  Z: '#0600ff',
-  X: '#0600ff',
-  C: '#0600ff',
-  V: '#0600ff',
-  SPACE: '#0600ff',
-};
-
 export const loadStoragePreset = () => {
   const storagePreset = window.localStorage.getItem('preset');
   return storagePreset !== null ? JSON.parse(storagePreset) : undefined;

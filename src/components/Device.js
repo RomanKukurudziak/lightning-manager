@@ -1,15 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-import {
-  Main,
-  DeviceContainer,
-  KeyboardStyle,
-  Sidebar,
-  Brush,
-  Color,
-  ColorWrapper,
-} from './styled';
-import '@simonwep/pickr/dist/themes/monolith.min.css';
+import { Main, DeviceContainer, KeyboardStyle } from './styled';
 
 const Device = ({ currentPreset, handleKeyClick }) => {
   return (
@@ -27,8 +18,7 @@ const Device = ({ currentPreset, handleKeyClick }) => {
               </span>
 
               <div
-                className="key--fn"
-                className="key--word"
+                className="key--fn key--word"
                 style={{ color: currentPreset.FN1 }}
                 onClick={handleKeyClick}
               >

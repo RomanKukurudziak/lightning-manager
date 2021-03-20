@@ -24,7 +24,7 @@ function Sidebar({
       newState[+selectRef.current.value] = currentPreset;
       return newState;
     });
-  }, [curColor]);
+  }, [curColor, setPresets, currentPreset]);
 
   const handleGroupSelect = (e) => {
     if (e.target.value === 'New') return setNewGroup([]);

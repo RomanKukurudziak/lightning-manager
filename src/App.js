@@ -22,7 +22,7 @@ function App() {
       setCurrentPreset((prevState) => ({ ...prevState, [key]: curColor }))
     );
     saveStoragePreset(presets, groups);
-  }, [curColor]);
+  }, [curColor, newGroup, groups, presets]);
 
   //Setting current color for each key/logo into current preset. Setting key into current group, if its already in a group remove from current group
   const handleKeyClick = (e) => {
