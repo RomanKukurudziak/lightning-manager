@@ -1,4 +1,5 @@
 export const defaultPreset = {
+  name: 'Preset 1',
   GB: '#ffffff',
   FN1: '#ffffff',
   FN2: '#ffffff',
@@ -23,6 +24,7 @@ export const defaultPreset = {
 };
 
 export const defaultPreset2 = {
+  name: 'Preset 2',
   GB: '#0600ff',
   FN1: '#0600ff',
   FN2: '#0600ff',
@@ -75,7 +77,7 @@ export const loadStoragePreset = () => {
   return storagePreset !== null ? JSON.parse(storagePreset) : undefined;
 };
 
-export const saveStoragePreset = (preset, groups) => {
-  const storagePreset = JSON.stringify([preset, groups]);
+export const saveStoragePreset = (presets, groups) => {
+  const storagePreset = JSON.stringify([presets, groups]);
   window.localStorage.setItem('preset', storagePreset);
 };

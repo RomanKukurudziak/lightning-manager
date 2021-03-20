@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Sidebar = styled.aside`
+export const SidebarContainer = styled.aside`
   color: gray;
   background-color: #181818;
   flex-basis: 25%;
@@ -49,7 +49,7 @@ export const Main = styled.div`
 
 export const Button = styled.button``;
 
-export const Device = styled.div`
+export const DeviceContainer = styled.div`
   box-sizing: border-box;
   background-color: gray;
   display: flex;
