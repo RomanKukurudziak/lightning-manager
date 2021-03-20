@@ -238,6 +238,14 @@ export const ColorWrapper = styled.div`
     margin: 20px;
     width: 120px;
     height: 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid gray;
+    border-radius: 4px;
+  }
+
+  & button:hover {
+    cursor: pointer;
   }
 `;
 

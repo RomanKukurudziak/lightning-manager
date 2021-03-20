@@ -87,7 +87,9 @@ function Sidebar({
           </option>
         ))}
       </select>
-      <button onClick={handleAddPreset}>Add preset</button>
+      <ColorWrapper>
+        <button onClick={handleAddPreset}>ADD PRESET</button>
+      </ColorWrapper>
       <div>
         <Brush
           onClick={() => {
